@@ -7,5 +7,5 @@ COPY main.go main.go
 RUN go build -o app .
 
 FROM alpine:3.10.3
-COPY --from=build /go/src/gocalc/app /usr/local/bin/gocalc
-CMD ["/usr/local/bin/gocalc"]
+COPY --from=build /go/src/gocalc/app /usr/local/bin/app
+CMD ["/usr/local/bin/app"]
